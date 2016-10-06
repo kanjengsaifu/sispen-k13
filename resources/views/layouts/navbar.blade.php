@@ -12,7 +12,7 @@
 		<div id="navbar" class="collapse navbar-collapse">
 			@if(Auth::check())
 			<ul class="nav navbar-nav navbar-right">
-				<li><a href="#">Logout</a></li>
+				<li><a href="{{ route('auth.logout') }}">Logout</a></li>
 			</ul>
 			@endif
 		</div>
