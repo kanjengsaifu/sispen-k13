@@ -11,6 +11,9 @@
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
+Route::get('/', ['as' => 'auth.login', 'uses' => 'Auth\LoginController@showLoginForm']);
+Route::post('/', ['as' => 'auth.login.post', 'uses' => 'Auth\LoginController@login']);
+
+Route::group(['middleware' => ['auth']], function () {
+	Route::get('home', ['as' => 'app.home', 'uses' => 'HomeController@index']);
 });
