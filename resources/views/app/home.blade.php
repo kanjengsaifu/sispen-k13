@@ -1,9 +1,9 @@
-@extends('base')
+@extends('app.base')
 
 @section('title')
 Home
 @endsection
 
-@section('content')
+@section('page.content')
 home
 @endsection

@@ -21,6 +21,7 @@ class CreatePelajaranTable extends Migration
 
         Schema::create('kds', function (Blueprint $table) {
             $table->increments('id');
+            $table->integer('pelajaran_id')->unsigned();
             $table->string('kompetensi_dasar');
             $table->timestamps();
         });
