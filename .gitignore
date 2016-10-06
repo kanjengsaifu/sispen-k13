@@ -1,5 +1,8 @@
 /node_modules
 /public/storage
+/public/css/app.css.map
+/public/css/app.css
+/public/js/app.js
 /storage/images
 /vendor
 /.idea

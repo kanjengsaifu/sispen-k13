@@ -1,4 +1,6 @@
-<ul class="nav nav-stacked">
-	<li><a href="#">Input Nilai</a></li>
-	<li><a href="#">Input Nilai</a></li>
+<ul class="nav nav-stacked nav-pills">
+	<li><a href="#">Absensi</a></li>
+	<li><a href="#">Nilai Kognitif</a></li>
+	<li><a href="#">Nilai Sikap</a></li>
+	<li><a href="#">Nilai Keterampilan</a></li>
 </ul>
