@@ -18,7 +18,15 @@ class SiswaController extends Controller
 
     public function save(Request $request)
     {
-    	//
+    	$siswa = new Siswa;
+
+    	$siswa->kelas_id = $request->kelas_id;
+    	$siswa->nis = $request->nis;
+    	$siswa->nama = $request->nama;
+
+    	$siswa->save();
+
+    	return redirect()->route('app.siswa.index');
     }
 
     public function update(Request $request)
@@ -26,8 +34,14 @@ class SiswaController extends Controller
     	//
     }
 
-    public function delete($guru_id)
+    public function delete($id)
     {
-    	//
+    	$siswa = Siswa::find($id);
+
+    	if ($siswa) {
+    		$siswa->delete();
+    	}
+
+    	return redirect()->route('app.siswa.index');
     }
 }

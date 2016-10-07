@@ -23,7 +23,15 @@ Route::group(['middleware' => ['auth'], 'as' => 'app.'], function () {
 
 	Route::group(['middleware' => ['admin']], function () {
 		Route::get('guru', ['as' => 'guru.index', 'uses' => 'GuruController@index']);
+		Route::post('guru', ['as' => 'guru.save', 'uses' => 'GuruController@save']);
+		Route::get('guru/delete/{id}', ['as' => 'guru.delete', 'uses' => 'GuruController@delete']);
+
 		Route::get('pelajaran', ['as' => 'pelajaran.index', 'uses' => 'PelajaranController@index']);
+		Route::post('pelajaran', ['as' => 'pelajaran.save', 'uses' => 'PelajaranController@save']);
+		Route::get('pelajaran/delete/{id}', ['as' => 'pelajaran.delete', 'uses' => 'PelajaranController@delete']);
+
 		Route::get('siswa', ['as' => 'siswa.index', 'uses' => 'SiswaController@index']);
+		Route::post('siswa', ['as' => 'siswa.save', 'uses' => 'SiswaController@save']);
+		Route::get('siswa/delete/{id}', ['as' => 'siswa.delete', 'uses' => 'SiswaController@delete']);
 	});
 });
