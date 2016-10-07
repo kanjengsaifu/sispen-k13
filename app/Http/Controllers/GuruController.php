@@ -18,7 +18,14 @@ class GuruController extends Controller
 
     public function save(Request $request)
     {
-    	//
+    	$guru = new Guru;
+
+    	$guru->nip = $request->nip;
+    	$guru->nama = $request->nama;
+
+    	$guru->save();
+
+    	return redirect()->route('app.guru.index');
     }
 
     public function update(Request $request)
@@ -26,8 +33,14 @@ class GuruController extends Controller
     	//
     }
 
-    public function delete($guru_id)
+    public function delete($id)
     {
-    	//
+    	$guru = Guru::find($id);
+
+    	if ($guru) {
+    		$guru->delete();
+    	}
+
+    	return redirect()->route('app.guru.index');
     }
 }

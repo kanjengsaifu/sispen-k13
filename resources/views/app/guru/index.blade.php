@@ -15,13 +15,13 @@ Daftar Guru
 	<div class="form-group">
 		<label class="control-label col-md-3">NIP</label>
 		<div class="col-md-6">
-			<input type="text" name="" class="form-control" required="">
+			<input type="text" name="nip" class="form-control" required="">
 		</div>
 	</div>
 	<div class="form-group">
 		<label class="control-label col-md-3">Nama Guru</label>
 		<div class="col-md-6">
-			<input type="text" name="" class="form-control" required="">
+			<input type="text" name="nama" class="form-control" required="">
 		</div>
 	</div>
 	<div class="form-group">
@@ -51,7 +51,7 @@ Daftar Guru
 			<td>
 				<a href="#" class="btn btn-success">Detail</a>
 				<a href="#" class="btn btn-warning">Edit</a>
-				<a href="#" class="btn btn-danger">Delete</a>
+				<a href="{{ route('app.guru.delete', ['id' => $value->nip]) }}" class="btn btn-danger">Delete</a>
 			</td>
 		</tr>
 		@endforeach
