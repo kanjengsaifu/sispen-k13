@@ -18,7 +18,13 @@ class PelajaranController extends Controller
 
     public function save(Request $request)
     {
-    	//
+    	$pelajaran = new Pelajaran;
+
+    	$pelajaran->pelajaran = $request->pelajaran;
+
+    	$pelajaran->save();
+
+    	return redirect()->route('app.pelajaran.index');
     }
 
     public function update(Request $request)
@@ -26,8 +32,14 @@ class PelajaranController extends Controller
     	//
     }
 
-    public function delete($guru_id)
+    public function delete($id)
     {
-    	//
+    	$pelajaran = Pelajaran::find($id);
+
+    	if ($pelajaran) {
+    		$pelajaran->delete();
+    	}
+
+    	return redirect()->route('app.pelajaran.index');
     }
 }

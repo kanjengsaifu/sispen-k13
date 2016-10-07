@@ -15,7 +15,7 @@ Daftar Pelajaran
 	<div class="form-group">
 		<label class="control-label col-md-3">Pelajaran</label>
 		<div class="col-md-6">
-			<input type="text" name="" class="form-control" required="">
+			<input type="text" name="pelajaran" class="form-control" required="">
 		</div>
 	</div>
 	<div class="form-group">
@@ -45,7 +45,7 @@ Daftar Pelajaran
 			<td>
 				<a href="#" class="btn btn-success">Detail</a>
 				<a href="#" class="btn btn-warning">Edit</a>
-				<a href="#" class="btn btn-danger">Delete</a>
+				<a href="{{ route('app.pelajaran.delete', ['id' => $value->id]) }}" class="btn btn-danger">Delete</a>
 			</td>
 		</tr>
 		@endforeach
